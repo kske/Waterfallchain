@@ -53,7 +53,7 @@ Translate the following text from {input_language} to {output_language}.
 
         last_result = translated_input
         for i, job_chain in enumerate(self.job_chains):
-            last_result = job_chain.run(text=last_result)
+            last_result = job_chain.run(last_result)
             if self.callback:
                 self.callback(source=CallbackSource.JOB_CHAIN, result=last_result)
 
